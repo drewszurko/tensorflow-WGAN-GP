@@ -1,0 +1,5 @@
+absl-py
+tf-nightly-gpu-2.0-preview
+tfds-nightly
+numpy
+tqdm
