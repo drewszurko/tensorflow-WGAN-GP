@@ -55,8 +55,7 @@ class UpConv2D(layers.Layer):
                                                  kernel_initializer='he_normal')
 
     def call(self, inputs, **kwargs):
-        x = self.up_conv_op(inputs)
-        return x
+        return self.up_conv_op(inputs)
 
 
 class BatchNorm(layers.Layer):
@@ -67,8 +66,7 @@ class BatchNorm(layers.Layer):
                                                     momentum=momentum)
 
     def call(self, inputs, **kwargs):
-        x = self.batch_norm(inputs)
-        return x
+        return self.batch_norm(inputs)
 
 
 class LayerNorm(layers.Layer):
@@ -77,8 +75,7 @@ class LayerNorm(layers.Layer):
         self.layer_norm = layers.LayerNormalization(epsilon=epsilon, axis=axis)
 
     def call(self, inputs, **kwargs):
-        x = self.layer_norm(inputs)
-        return x
+        return self.layer_norm(inputs)
 
 
 class LeakyRelu(layers.Layer):
@@ -87,8 +84,7 @@ class LeakyRelu(layers.Layer):
         self.leaky_relu = layers.LeakyReLU(alpha=alpha)
 
     def call(self, inputs, **kwargs):
-        x = self.leaky_relu(inputs)
-        return x
+        return self.leaky_relu(inputs)
 
 
 class AdamOptWrapper(optimizers.Adam):
